@@ -17,3 +17,17 @@ This computer is connected to a small ups, then if there is power outage we coul
 In principle we have 1024x4 samples and a header that is 0xAABBCCDD, that indicates the begining of a DMA data frame, then we could check the correctness of it (also we could use the temperature channel to check if there is missing data around).
 After playing a bit I set the sampling frequency in 2kSa/s in each channel, with that you should have enough samples to make a frequency analysis.
 
+## Building toolflow
+
+To get the pico SDK you need to clone the SDK git repo:
+`git clone -b master https://github.com/raspberrypi/pico-sdk.git`
+
+Then you have to move inside the cloned repo and run:
+`git submodule update --init`
+
+You need to install the needed packages:
+`sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential`
+
+Finally you have to set the enviroment variable (you can add it to the ~/.bashrc file):
+`export PICO_SDK_PATH=<where you installed> `
+
